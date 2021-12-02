@@ -19,15 +19,6 @@ func main() {
 	fmt.Println(player.word)
 	fmt.Println("===================================================")
 
-	/*for player.checkWord() {
-		if player.checkWord() {
-			player.checkInput()
-			fmt.Println(player.word, "<------")
-			player.counter++
-		} else {
-			fmt.Println("Bravo tu as trouver le mot !!")
-		}
-	}*/
 	for player.checkWord() {
 		player.displayWord()
 		player.displayListLetter()
