@@ -15,7 +15,7 @@ func Clear() {
 
 func (p hangmanData) displayWord() {
 	fmt.Println("-------------------")
-	fmt.Print("Voici le mot à trover --> ")
+	fmt.Print("Voici le mot à trouver --> ")
 	for _, letter := range p.word {
 		fmt.Print(letter, " ")
 	}

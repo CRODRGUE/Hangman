@@ -23,9 +23,11 @@ func (p *hangmanData) checkInput() {
 		letterToRune = r
 	}
 	if letter == p.wordToFind {
+		letter = strings.ToLower(letter)
 		for index, char := range p.wordToFind {
 			p.word[index] = string(char)
 		}
+
 	} else if len(letter) != 1 {
 		fmt.Println("Tu peux rentrée un seule caratere à la fois !! Recommence encore une fois l'ami...")
 		input()
