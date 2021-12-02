@@ -19,15 +19,14 @@ func input() string {
 
 func (p *hangmanData) checkInput() {
 	letter := input()
+	letter = strings.ToLower(letter)
 	for _, r := range letter {
 		letterToRune = r
 	}
 	if letter == p.wordToFind {
-		letter = strings.ToLower(letter)
 		for index, char := range p.wordToFind {
 			p.word[index] = string(char)
 		}
-
 	} else if len(letter) != 1 {
 		fmt.Println("Tu peux rentrée un seule caratere à la fois !! Recommence encore une fois l'ami...")
 		input()
@@ -35,7 +34,7 @@ func (p *hangmanData) checkInput() {
 		fmt.Println("Tu peux seulement mettre des carateres alphabetiques !! Recommence encore une fois l'ami...")
 		input()
 	} else {
-		p.letterlist = append(p.letterlist, strings.ToLower(letter))
+		p.letterlist = append(p.letterlist, letter)
 		p.CheckLetter(strings.ToLower(letter))
 	}
 }
