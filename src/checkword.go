@@ -23,7 +23,7 @@ func (p hangmanData) checkWord() bool {
 			check = true
 		}
 	}
-	if check && p.counter == 0 {
+	if check && p.counter <= 0 {
 		fmt.Println("Dommage tu as depasser le nombre maximum d'essais... =(")
 		fmt.Println("Le mot à trouver était : ", p.wordToFind)
 		check = false

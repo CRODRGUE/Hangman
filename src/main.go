@@ -18,7 +18,7 @@ func main() {
 	fmt.Println(player.word)
 	fmt.Println("===================================================") */
 
-	for player.checkWord() && player.counter != 0 {
+	for player.checkWord() && player.counter > 0 {
 		player.displayWord()
 		player.displayListLetter() // Les lettres s'affiche avec un tour de retard mais impossible de trouver pourquoi ?
 		player.displayCounter()    // Si tu trouves le probleme dis le moi =)
