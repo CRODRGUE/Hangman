@@ -1,17 +1,33 @@
 package main
 
+import (
+	"fmt"
+	"os"
+)
+
 type hangmanData struct {
 	wordToFind string
 	word       []string
 	letterlist []string
 	counter    int
+	file       string
 }
 
 func main() {
 	var player hangmanData
+	if len(os.Args) < 2 {
+		fmt.Println("Il faut ajouter le fichier .txt !")
+		return
+	}
+	if len(os.Args) > 2 {
+		fmt.Println("Tu as mis trop darguments il faut seulement joindre le fichier .txt")
+		return
+	}
+	player.file = os.Args[1]
 	player.init()
 	player.showRandLetter()
 	initJose()
+
 	/* Pour faire des tests (affiche le mot au lancement !)
 	fmt.Println("===================================================")
 	fmt.Println("---> ", player.wordToFind)

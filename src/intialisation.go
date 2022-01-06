@@ -10,7 +10,7 @@ import (
 
 func (p *hangmanData) init() {
 	var words []string
-	fichier, err := os.Open("../doc/words.txt")
+	fichier, err := os.Open(p.file)
 	scanner := bufio.NewScanner(fichier)
 	if err != nil {
 		log.Fatal(err)
